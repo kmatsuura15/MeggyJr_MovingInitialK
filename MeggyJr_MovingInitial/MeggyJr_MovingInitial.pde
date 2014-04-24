@@ -75,6 +75,9 @@ void loop()
       if (kayArray[j].x < 0){    //If the xcoord is less than 0, loop it to the right.
         kayArray[j].x = 7;  
       }
+      if (direction == 0){
+        kayArray[j].y++;
+      }
     }  
 }
 
