@@ -1,8 +1,8 @@
 #include <MeggyJrSimple.h>
 
-int marker = 15;
+int marker = 15;    //number of pixels needed for letter K
 
-int direction = 270;
+int direction = 270;    //Initial direction (Left)
 
 struct Point{
   int x;    //x-coordinate of this point.
@@ -54,6 +54,9 @@ void loop()
       if (Button_Left){
         direction = 270;
       }
+      if (direction == 0){
+        kayArray[j].y++;
+      }
       if(kayArray[j].y > 7 ){    //If the ycoord is greater than 8, loop it back to the bottom.
         kayArray[j].y = 0;
       }
@@ -74,9 +77,6 @@ void loop()
       }
       if (kayArray[j].x < 0){    //If the xcoord is less than 0, loop it to the right.
         kayArray[j].x = 7;  
-      }
-      if (direction == 0){
-        kayArray[j].y++;
       }
     }  
 }
